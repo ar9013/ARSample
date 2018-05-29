@@ -9,20 +9,20 @@ import com.vistrav.ask.Ask;
 import com.vistrav.ask.annotations.AskDenied;
 import com.vistrav.ask.annotations.AskGranted;
 
-public class MainActivity extends AppCompatActivity {
+public class CameraActivity extends AppCompatActivity {
 
-    private static final String TAG ="MainActivity";
+    private static final String TAG ="CameraActivity";
     private static final int CAMERA =5;
     private static final int WRITE_EXTERNAL_STORAGE =3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_camera);
 
         // 檢查相機權限
-        Ask.on(MainActivity.this).id(CAMERA).forPermissions(Manifest.permission.CAMERA).go();
-        Ask.on(MainActivity.this).id(WRITE_EXTERNAL_STORAGE).forPermissions(Manifest.permission.WRITE_EXTERNAL_STORAGE).go();
+        Ask.on(CameraActivity.this).id(CAMERA).forPermissions(Manifest.permission.CAMERA).go();
+        Ask.on(CameraActivity.this).id(WRITE_EXTERNAL_STORAGE).forPermissions(Manifest.permission.WRITE_EXTERNAL_STORAGE).go();
 
 
     }
@@ -46,7 +46,5 @@ public class MainActivity extends AppCompatActivity {
     public void WRITE_EXTERNAL_STORAGE_Granted(int id){
         Log.d(TAG,"CAMERA GRANTED");
     }
-
-
 
 }
